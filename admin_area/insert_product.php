@@ -115,7 +115,7 @@ if(isset($_POST['insert_post'])){
 
 	if ($insert_pro) {
 		echo "<script>alert('Product has been inserted!')</script>";
-		echo "<script>window.open('insert_product.php','_self')</script>";
+		echo "<script>window.open('index.php?insert_product','_self')</script>";
 	}
 }
 ?>
