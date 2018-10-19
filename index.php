@@ -5,7 +5,7 @@ include("functions/functions.php");
 ?>
 <html>
 	<head>
-		<title> My Online Shop </title>
+		<title> TRAPCART </title>
 
 	<link rel="stylesheet" href="styles/style.css" media="all"/>
 	</head>
