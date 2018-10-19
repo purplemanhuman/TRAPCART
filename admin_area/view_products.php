@@ -40,7 +40,7 @@
 
 		<td><img src="product_images/<?php echo $pro_image;?>" width="60" height="60"/></td>
 
-		<td style="color:#FFFFF8;"><?php echo $pro_price;?></td>
+		<td style="color:#FFFFF8;"><?php echo 'Rs.'.$pro_price;?></td>
 
 		<td ><a href="index.php?edit_pro=<?php echo $pro_id; ?>" style="text-decoration: none; color:#FFFFF8;">Edit</a></td>
 
