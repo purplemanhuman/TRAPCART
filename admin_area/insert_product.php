@@ -96,7 +96,7 @@ include("includes/db.php")
 
 
 if(isset($_POST['insert_post'])){
-	//getting text data from feild
+	//getting text data from field
 	$product_title = $_POST['product_title'];
 	$product_cat = $_POST['product_cat'];
 	$product_brand = $_POST['product_brand'];

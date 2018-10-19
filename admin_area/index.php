@@ -27,7 +27,6 @@
 			<a href="index.php?view_orders" style="font-family: 'Product Sans'">View Orders</a>
 			<a href="index.php?view_payments" style="font-family: 'Product Sans'">View Payments</a>
 			<a href="logout.php" style="font-family: 'Product Sans'">Admin Logout</a>
-		
 		</div>
 		
 		<div id="left">
