@@ -1,5 +1,4 @@
 <!DOCTYPE> 
-
 <html>
 	<head>
 		<title>This is Admin Panel</title> 

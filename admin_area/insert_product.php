@@ -11,21 +11,21 @@ include("includes/db.php")
 </head>
 <body bgcolor= #F0EBDF>
 	<form action="insert_product.php" method="post" enctype="multipart/form-data">
-		<table align="center" width="700" border="2" bgcolor= #EA8859>
-
+		<table align="center" width="795" height = "800" border="2" bgcolor= #EB3E4A>
 			<tr align="center">
-				<td colspan="7" fontfa><h2>Insert New Post Here</h2></td>
+				<td colspan="6" style="font-family: 'Product Sans'; text-decoration: underline; font-size: 18px; color: #FFFFF8"><h2>Insert New Post Here</h2></td>
 			</tr>
 
 			<tr>
-				<td align="right"><b><b>Product Title:</b></td>
+				<td align="right"><b style="font-family: 'Product Sans'; font-size: 18px; color: #FFFFF8;">Product Title:</b></td>
 				<td><input type="text" name="product_title" size="60" required></td>
 			</tr>
 
 
 
 			<tr>
-				<td align="right"><b><b>Product Category:</b></td>
+				<td align="right"><b style="font-family: 'Product Sans';font-size: 18px; color:
+				#FFFFF8;">Product Category:</b></td>
 				<td>
 					<select name="product_cat">
 						<option>Select a Category</option>
@@ -45,9 +45,9 @@ include("includes/db.php")
 
 
 			<tr>
-				<td align="right"><b>Product Brand:</b></td>
+				<td align="right"><b style="font-family: 'Product Sans';font-size: 18px; color: #FFFFF8;">Product Brand:</b></td>
 				<td>
-					<select name="product_brand" required>
+					<select name="product_brand"  required>
 						<option>Select a Brand</option>
 						<?php
 						$get_brands = "select * from brands";
@@ -65,22 +65,22 @@ include("includes/db.php")
 
 
 			<tr>
-				<td align="right"><b>Product Image:</b></td>
+				<td align="right" style="font-family: 'Product Sans';font-size: 18px;color: #FFFFF8;"><b>Product Image:</b></td>
 				<td><input type="file" name="product_image" required></td>
 			</tr>
 
 			<tr>
-				<td align="right"><b>Product Price:</b></td>
+				<td align="right" style="font-family: 'Product Sans';font-size: 18px;color: #FFFFF8;"><b>Product Price:</b></td>
 				<td><input type="text" name="product_price" required></td>
 			</tr>
 
 			<tr>
-				<td align="right"><b>Product Description:</b></td>
+				<td align="right" style="font-family: 'Product Sans';font-size: 18px;color: #FFFFF8;"><b>Product Description:</b></td>
 				<td><textarea name="product_desc" cols="30" rows="10" ></textarea></td>
 			</tr>
 
 			<tr>
-				<td align="right"><b>Product Keywords:</b></td>
+				<td align="right" style="font-family: 'Product Sans';font-size: 18px;color: #FFFFF8;"><b>Product Keywords:</b></td>
 				<td><input type="text" name="product_keywords" size="50" required></td>
 			</tr>
 
