@@ -1,95 +1,107 @@
 <!DOCTYPE>
 <?php 
-session_start();
+session_start(); 
+
 include("functions/functions.php");
+
+include("includes/db.php");
 ?>
 <html>
 	<head>
-		<title> My Online Shop </title>
-
-	<link rel="stylesheet" href="styles/style.css" media="all"/>
+		<title>My Online Shop</title>
+		
+		
+	<link rel="stylesheet" href="styles/style.css" media="all" /> 
 	</head>
+	
 <body>
-	<!--Main Container Starts Here-->
+	
+	<!--Main Container starts here-->
 	<div class="main_wrapper">
-		<!--Header Starts here-->
+	
+		<!--Header starts here-->
 		<div class="header_wrapper">
-			<a href="index.php"></a>
-			<img id="logo" src= "images/logo.png"/>
+		
+			<a href="index.php"><img id="logo" src="images/logo.png" /> </a>
 		</div>
-		<!--Header Ends here-->
-
-
-		<!--Navigation Bar Starts-->
+		<!--Header ends here-->
+		
+		<!--Navigation Bar starts-->
 		<div class="menubar">
+			
 			<ul id="menu">
 				<li><a href="index.php">Home</a></li>
 				<li><a href="all_products.php">All Products</a></li>
 				<li><a href="customer/my_account.php">My Account</a></li>
 				<li><a href="#">Sign Up</a></li>
 				<li><a href="cart.php">Shopping Cart</a></li>
-				<li><a href="# ">Contact Us</a></li>
+				<li><a href="#">Contact Us</a></li>
+			
 			</ul>
+			
 			<div id="form">
-				<form method="get" action="results.php" enctype="multipart/form-data">
-					<input type="text" name="user_query" placeholder="Search a Product" />
-					<input type="submit" name="search" value="Search"/>
-				</form>
+			
 			</div>
+			
 		</div>
-		<!--Navigation Bar Ends-->
-
-
+		<!--Navigation Bar ends-->
+	
 		<!--Content wrapper starts-->
 		<div class="content_wrapper">
-
+		
 			<div id="sidebar">
+			
 				<div id="sidebar_title">Categories</div>
-
-				<div id="cats">
-					<ul id="cats">
-						<?php getCats(); ?>
-					</ul>	
-				</div>
-
+				
+				<ul id="cats">
+				
+				<?php getCats(); ?>
+				
+				<ul>
+					
 				<div id="sidebar_title">Brands</div>
-				<div id="cats">
-					<ul id="cats">
-						<?php getBrands();?>
-					</ul>
-				</div>
-
+				
+				<ul id="cats">
+					
+					<?php getBrands(); ?>
+				
+				<ul>
+			
+			
 			</div>
-
+		
 			<div id="content_area">
-
-				<?php cart();?>
-
-				<div id="shopping_cart">
-
+			
+			<?php cart(); ?>
+			
+			<div id="shopping_cart"> 
+					
 					<span style="float:left; font-size:14px; padding: 5px;line-height: 39px;">
 						Welcome to <b style="color:#EA8859">TRAPCART</b>, your favourite Shopping Portal | Total Items : <?php total_items() ;?> | Total Price : <?php total_price();?><a href="index.php" style="font-size:15px; padding: 5px;line-height: 40px; color:#EA8859;">BACK TO STORE!</a>
 
-						<?php
-							if(!isset($_SESSION['customer_email'])){
-
-								echo "<a href = 'checkout.php' style = 'color :#EA8859; font-size:16px;''>LOGIN</a>";
-							}
-
-							else {
-								echo "<a href='logout.php' style = 'color :#EA8859; font-size:15px;'>LOGOUT</a>";
-							}
-						?>
+					
+					<?php 
+					if(!isset($_SESSION['customer_email'])){
+					
+					echo "<a href = 'checkout.php' style = 'color :#EA8859; font-size:16px;''>LOGIN</a>";
+					
+					}
+					else {
+					echo "<a href='logout.php' style = 'color :#EA8859; font-size:15px;'>LOGOUT</a>";
+					}
+					
+					
+					
+					?>
+					
 					</span>
-				</div>
-				<?php $ip = getIp();?>
-
+			</div>
+			
 				<div id="products_box">
 				
 			<form action="" method="post" enctype="multipart/form-data">
 			
 				<table align="center" width="700" bgcolor="252C3F" style="color: #F0EBDF; font-size:20px;">
-					
 					<tr align="center">
 						<th style="color:#F0EBDF; font-size: 20px;">Remove</th>
 						<th style="color:#F0EBDF; font-size: 20px;">Product(s)</th>
@@ -156,15 +168,15 @@ include("functions/functions.php");
 						?>
 						
 						
-						<td><?php echo "$" . $single_price; ?></td>
+						<td><?php echo "Rs" . $single_price; ?></td>
 					</tr>
 					
 					
 				<?php } } ?>
 				
 				<tr>
-						<td colspan="4" align="right"><b style="color:#F0EBDF; font-size: 20px;">Sub Total : </b></td>
-						<td style="color:#F0EBDF";><?php echo "Rs." . $total;?></td>
+						<td colspan="4" align="right"><b>Sub Total:</b></td>
+						<td><?php echo "Rs." . $total;?></td>
 					</tr>
 					
 					<tr align="center">
@@ -219,13 +231,23 @@ include("functions/functions.php");
 			</div>
 		</div>
 		<!--Content wrapper ends-->
-
-
+		
+		
+		
 		<div id="footer">
-			<h2 style="text-align:center; padding-top:40px;">&copy; 2018 by Vivek Pattanaik</h2>
+		
+		<h2 style="text-align:center; padding-top:30px;">&copy; 2018 by Vivek Pattanaik</h2>
+		
 		</div>
+	
+	
+	
+	
+	
+	
+	</div> 
+<!--Main Container ends here-->
 
-	</div>
-	<!--Main Container Ends Here-->
+
 </body>
 </html>
