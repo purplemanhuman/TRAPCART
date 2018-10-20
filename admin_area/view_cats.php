@@ -1,3 +1,13 @@
+<?php 
+session_start(); 
+
+if(!isset($_SESSION['user_email'])){
+	
+	echo "<script>window.open('login.php?not_admin=You are not an Admin!','_self')</script>";
+}
+else {
+
+?>
 
 <table width="795" height="800" align="center" bgcolor="EB3E4A">
 
@@ -8,28 +18,24 @@
 	</tr>
 
 	<tr align="center" >
-		<th style="font-family: 'Product Sans'; font-size: 18px; text-decoration: underline;color:#FFFFF8;">S.N</th>
-		<th style="font-family: 'Product Sans'; font-size: 18px;text-decoration: underline; color:#FFFFF8;">Title</th>
-		<th style="font-family: 'Product Sans'; font-size: 18px;text-decoration: underline;color:#FFFFF8;">Image</th>
-		<th style="font-family: 'Product Sans'; font-size: 18px;text-decoration: underline;color:#FFFFF8;">Price</th>
+		<th style="font-family: 'Product Sans'; font-size: 18px; text-decoration: underline;color:#FFFFF8;">Cateogory ID</th>
+		<th style="font-family: 'Product Sans'; font-size: 18px;text-decoration: underline; color:#FFFFF8;">Cateogory Title</th>
 		<th style="font-family: 'Product Sans'; font-size: 18px; text-decoration: underline;color:#FFFFF8;">Edit</th>
 		<th style="font-family: 'Product Sans'; font-size: 18px; text-decoration: underline;color:#FFFFF8;">Delete</th>
 	</tr>
 	<?php 
 	include("includes/db.php");
 	
-	$get_pro = "select * from products";
+	$get_cat = "select * from categories";
 	
-	$run_pro = mysqli_query($con, $get_pro); 
+	$run_cat = mysqli_query($con, $get_cat); 
 	
 	$i = 0;
 	
-	while ($row_pro=mysqli_fetch_array($run_pro)){
+	while ($row_cat=mysqli_fetch_array($run_cat)){
 		
-		$pro_id = $row_pro['product_id'];
-		$pro_title = $row_pro['product_title'];
-		$pro_image = $row_pro['product_image'];
-		$pro_price = $row_pro['product_price'];
+		$cat_id = $row_cat['cat_id'];
+		$cat_title = $row_cat['cat_title'];
 		$i++; 
 	
 	?>
@@ -37,17 +43,14 @@
 
 		<td style="color:#FFFFF8;"><?php echo $i;?></td>
 
-		<td style="color:#FFFFF8;"><?php echo $pro_title;?></td>
+		<td style="color:#FFFFF8;"><?php echo $cat_title;?></td>
 
-		<td><img src="product_images/<?php echo $pro_image;?>" width="60" height="60"/></td>
+		<td ><a href="index.php?edit_cat=<?php echo $cat_id; ?>" style="text-decoration: none; color:#FFFFF8;">Edit</a></td>
 
-		<td style="color:#FFFFF8;"><?php echo 'Rs.'.$pro_price;?></td>
-
-		<td ><a href="index.php?edit_pro=<?php echo $pro_id; ?>" style="text-decoration: none; color:#FFFFF8;">Edit</a></td>
-
-		<td ><a href="delete_pro.php?delete_pro=<?php echo $pro_id; ?>" style=" text-decoration: none; color:#FFFFF8;"> Delete</a></td>
+		<td ><a href="delete_cat.php?delete_cat=<?php echo $cat_id; ?>" style=" text-decoration: none; color:#FFFFF8;"> Delete</a></td>
 	
 	</tr>
 	<?php } ?>
 </table>
 
+<?php }?>

@@ -1,3 +1,13 @@
+<?php 
+session_start(); 
+
+if(!isset($_SESSION['user_email'])){
+	
+	echo "<script>window.open('login.php?not_admin=You are not an Admin!','_self')</script>";
+}
+else {
+
+?>
 <!DOCTYPE> 
 <html>
 	<head>
@@ -30,11 +40,12 @@
 		</div>
 		
 		<div id="left">
-		<h2 style="color:red; text-align:center;"><?php echo @$_GET['logged_in']; ?></h2>
+		<h2 style="color:blue; text-align:center; font-family:'Product Sans'; color: #FFFFF8;line-height: 100px; font-size: 40px"><?php echo @$_GET['logged_in']; ?></h2>
+
 		<?php 
 		if(isset($_GET['insert_product'])){
 		
-		include("insert_product.php"); 
+		include("insert_products.php"); 
 		
 		}
 		if(isset($_GET['view_products'])){
@@ -52,13 +63,13 @@
 		include("insert_cat.php"); 
 		
 		}
-		/*
+		
 		if(isset($_GET['view_cats'])){
 		
 		include("view_cats.php"); 
 		
 		}
-
+		
 		if(isset($_GET['edit_cat'])){
 		
 		include("edit_cat.php"); 
@@ -86,9 +97,14 @@
 		include("view_customers.php"); 
 		
 		}
-		*/
+		
 		?>
 		</div>
+
+
+
+
+
 
 	</div>
 
@@ -96,3 +112,4 @@
 </body>
 </html>
 
+<?php } ?> 

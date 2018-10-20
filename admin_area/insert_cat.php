@@ -1,3 +1,13 @@
+<?php 
+session_start(); 
+
+if(!isset($_SESSION['user_email'])){
+	
+	echo "<script>window.open('login.php?not_admin=You are not an Admin!','_self')</script>";
+}
+else {
+
+?>
 <form action="" method="POST" style="padding: 80px;">
 	<b style="font-family: 'Product Sans'; font-size: 20px; color: #FFFFF8;">INSERT NEW CATEGORY:</b>
 	<input type="text" name="new_cat" required="" style="font-family: 'Product Sans';font-size: 18px" />
@@ -24,3 +34,5 @@
 	}
 
 ?>
+
+<?php }?>
