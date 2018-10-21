@@ -5,7 +5,7 @@
 
 	$delete_id = $_GET['delete_brand'];
 
-	$delete_brand ="delete from brands where brand_id='$delete_id'"; 
+	$delete_brand = "delete from brands where brand_id='$delete_id'"; 
 
 	$run_delete = mysqli_query($con, $delete_brand);
 
